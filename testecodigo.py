@@ -15,4 +15,5 @@ fig, ax = plt.subplots (subplot_kw= {"projection": "3d"})
 ax.voxels(voxelarray, facecolors="pink", edgecolor= "red")
 ax.set (xlabel= "X", ylabel= "Y", zlabel= "Z")
 
-plt.show()
+plt.savefig("voxels.png")
+print("Imagem salva como voxels.png")
