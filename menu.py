@@ -1,23 +1,18 @@
-print ("Bem vindo(a) a pipeline de vizualização 3d!")
-user_input = int (input ("Escolha uma das opções abaixo: "))
 
-print("1. Manipular o objeto")
-print("2. Manipular a câmera")
-print("3. Modificar projeção")
-print("4. Modificar mapeamento")
-print("5. Visualizar objeto")
+import numpy as np
+import matplotlib.pyplot as plt
 
-
-def menu (opcao):
+def menu_objeto (opcao):
     if opcao == 1:
-        print("Manipulando objeto!")
+        print("Translação")
     elif opcao == 2: 
-        print("Manipulando camera!")
+        print("Escala")
     elif opcao == 3 :
-        print ("Modificando projeçao!")
+        print ("Rotação X")
     elif opcao == 4:
-        print ("Modificando mapeamento!")
+        print ("Rotação Y")
     elif opcao == 5:
-        print ("Visualizando objeto!")
+        print ("Rotação Z")
 
-print (menu (user_input))
+opcao = int (input ("Escolha uma opção: \n 1 - Translação \n 2 - Escala \n 3 - Rotação X \n 4 - Rotação Y \n 5 - Rotação Z \n" ))
+print (menu_objeto (opcao))

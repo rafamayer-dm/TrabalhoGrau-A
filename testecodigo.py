@@ -1,19 +1,27 @@
-import matplotlib.pyplot as plt 
-from mpl_toolkits.mplot3d import Axes3D
+
 import numpy as np
-# oiiiiii
-fig = plt.figure()
-ax = plt.axes(projection='3d')
-x, y, z = np.indices((8,8,8))
+import matplotlib.pyplot as plt
 
-cube1 = ( x < 3 ) & ( y < 3 ) & ( z < 3 ) 
-cube2 = ( x >= 5 ) & ( y >= 5 ) & ( z >= 5 )
+def criar_cilindro(num_lados=20):
+    vertices = []
 
-voxelarray = cube1 | cube2
+    altura = 1
+    raio = 0.5
 
-fig, ax = plt.subplots (subplot_kw= {"projection": "3d"})
-ax.voxels(voxelarray, facecolors="pink", edgecolor= "red")
-ax.set (xlabel= "X", ylabel= "Y", zlabel= "Z")
+    # topo e base
+    for i in range(num_lados):
+        ang = 2 * np.pi * i / num_lados
+        x = raio * np.cos(ang)
+        y = raio * np.sin(ang)
 
-plt.savefig("voxels.png")
-print("Imagem salva como voxels.png")
+        # topo (z = +0.5)
+        vertices.append([x, y, 0.5, 1])
+
+        # base (z = -0.5)
+        vertices.append([x, y, -0.5, 1])
+
+    print ("OI") 
+    print ("rodando!")
+    return np.array(vertices).T  # formato 4xN
+
+criar_cilindro()
