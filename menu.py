@@ -20,3 +20,10 @@ def menu_camera():
     print("4. Rotação Z")
     escolha = int(input("Escolha: "))
     return escolha
+
+def menu_projecao():
+    print("\nMenu Projeção:")
+    print("1. Perspectiva")
+    print("2. Paralela")
+    escolha = int(input("Escolha: "))
+    return escolha

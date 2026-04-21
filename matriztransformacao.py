@@ -64,9 +64,9 @@ def geraMatrizCamera (camx, camy, camz, camrx, camry, camrz):
                     [0,     np.sin(-camrx),    np.cos(-camrx),  0],
                     [0,     0,                  0,              1]])
     
-    Ry = np.array([ [np.cos(-camry),    0, np.sin(-camry),     0],
+    Ry = np.array([ [np.cos(camry),    0, np.sin(camry),     0],
                     [0,                 1, 0,                  0],
-                    [-np.sin(-camry),   0, np.cos(-camry),     0],
+                    [-np.sin(camry),   0, np.cos(camry),     0],
                     [0,                 0, 0,                  1]])
     
     Rz = np.array([ [np.cos(-camrz),   -np.sin(-camrz),     0,  0],
