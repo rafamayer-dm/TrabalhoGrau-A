@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 def criar_cilindro(num_lados=20):
     vertices = []
 
-    altura = 1
     raio = 0.5
 
     # topo e base
@@ -20,8 +19,5 @@ def criar_cilindro(num_lados=20):
         # base (z = -0.5)
         vertices.append([x, y, -0.5, 1])
 
-    print ("OI") 
-    print ("rodando!")
-    return np.array(vertices).T  # formato 4xN
-
-criar_cilindro()
+    arr = np.array(vertices)
+    return arr.T
